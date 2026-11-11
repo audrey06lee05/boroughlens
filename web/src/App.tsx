@@ -11,13 +11,16 @@ import type { BoroughOverview } from "./types/overview";
 export default function App() {
   const [data, setData] = useState<BoroughOverview[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchOverview()
       .then(setData)
-      .catch((e) => setError(String(e)));
+      .catch((e) => setError(String(e)))
+      .finally(() => setIsLoading(false));
   }, []);
 
+  if (isLoading) return <p>Loading…</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
