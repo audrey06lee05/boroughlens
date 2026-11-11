@@ -1,0 +1,48 @@
+[
+  {
+    "code": "E09000012",
+    "name": "Hackney",
+    "population": 259200,
+    "crimePer1000": {
+      "value": 121,
+      "annualChange": null,
+      "period": "2026-09",
+      "publishedAt": "2026-11-03"
+    },
+    "averageRent": {
+      "value": 2400,
+      "annualChange": 0.074,
+      "period": "2026-09",
+      "publishedAt": "2026-10-22"
+    },
+    "averagePrice": {
+      "value": 585000,
+      "annualChange": -0.008,
+      "period": "2026-08",
+      "publishedAt": "2026-10-15"
+    }
+  },
+  {
+    "code": "E09000007",
+    "name": "Camden",
+    "population": 210100,
+    "crimePer1000": {
+      "value": 148,
+      "annualChange": null,
+      "period": "2026-09",
+      "publishedAt": "2026-11-03"
+    },
+    "averageRent": {
+      "value": 2950,
+      "annualChange": 0.061,
+      "period": "2026-09",
+      "publishedAt": "2026-10-22"
+    },
+    "averagePrice": {
+      "value": 805000,
+      "annualChange": 0.012,
+      "period": "2026-08",
+      "publishedAt": "2026-10-15"
+    }
+  }
+]
