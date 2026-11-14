@@ -9,6 +9,8 @@ import { fetchOverview } from "./api/client";
 import type { BoroughOverview } from "./types/overview";
 import OverviewCard from "./components/OverviewCard";
 
+const COLOURS = ["var(--b0)", "var(--b1)", "var(--b2)"];
+
 export default function App() {
   const [data, setData] = useState<BoroughOverview[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -27,9 +29,11 @@ export default function App() {
   return (
     <main>
       <h2>At a glance</h2>
-      {data.map((b) => (
-        <OverviewCard key={b.code} borough={b} /> // ← one card per borough
-      ))}
+      <div className="card-grid">
+        {data.map((b, i) => (
+          <OverviewCard key={b.code} borough={b} colour={COLOURS[i]} />
+        ))}
+      </div>
     </main>
   );
 }

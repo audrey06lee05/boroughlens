@@ -6,8 +6,9 @@
 
 import type { BoroughOverview, Metric } from "../types/overview";
 import { formatGBP, formatChange, formatPeriod } from "../utils/format";
+import "./OverviewCard.css";
 
-type Props = { borough: BoroughOverview };
+type Props = { borough: BoroughOverview; colour: string };
 
 function MetricRow({
   label,
@@ -26,7 +27,9 @@ function MetricRow({
       <div className="metric-value">
         {money ? formatGBP(metric.value) : metric.value}
         {metric.annualChange !== null && (
-          <span className="metric-change">
+          <span
+            className={`metric-change ${metric.annualChange > 0 ? "up" : "down"}`}
+          >
             {formatChange(metric.annualChange)} yr
           </span>
         )}
@@ -35,9 +38,12 @@ function MetricRow({
   );
 }
 
-export default function OverviewCard({ borough }: Props) {
+export default function OverviewCard({ borough, colour }: Props) {
   return (
-    <article className="card">
+    <article
+      className="card"
+      style={{ "--card-colour": colour } as React.CSSProperties}
+    >
       <h3>{borough.name}</h3>
       <p className="card-meta">
         {borough.code} · population {borough.population.toLocaleString("en-GB")}{" "}

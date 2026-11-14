@@ -1,0 +1,54 @@
+/*
+ * OverviewCard.css
+ * Styles for the "At a glance" cards and the grid that holds them.
+ */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--card-colour);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+.card-meta {
+  font-size: 0.78rem;
+  color: var(--faint);
+  margin: 2px 0 14px;
+}
+
+.metric {
+  padding: 10px 0;
+  border-top: 1px solid var(--soft);
+}
+.metric-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.metric-value {
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.metric-change {
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-left: 6px;
+}
+.metric-change.up {
+  color: var(--up);
+}
+.metric-change.down {
+  color: var(--down);
+}
