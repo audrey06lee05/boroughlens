@@ -1,7 +1,7 @@
 /**
  * App.tsx
- * Root component. Temporary version: loads the overview data and lists
- * each borough's rent, to prove types → mock → fetch all work together.
+ * Root component. Loads the overview data and renders one
+ * OverviewCard per borough.
  */
 
 import { useEffect, useState } from "react";

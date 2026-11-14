@@ -10,7 +10,7 @@ export function formatGBP(value: number): string {
 
 export function formatChange(change: number): string {
   const sign = change > 0 ? "+" : "";
-  return `${sign}${(change * 1).toFixed(1)}%`;
+  return `${sign}${(change * 100).toFixed(1)}%`;
 }
 
 export function formatPeriod(period: string): string {
