@@ -7,6 +7,7 @@
 import { useEffect, useState } from "react";
 import { fetchOverview } from "./api/client";
 import type { BoroughOverview } from "./types/overview";
+import OverviewCard from "./components/OverviewCard";
 
 export default function App() {
   const [data, setData] = useState<BoroughOverview[]>([]);
@@ -24,12 +25,11 @@ export default function App() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <ul>
+    <main>
+      <h2>At a glance</h2>
       {data.map((b) => (
-        <li key={b.code}>
-          {b.name}: £{b.averageRent.value}/month rent
-        </li>
+        <OverviewCard key={b.code} borough={b} /> // ← one card per borough
       ))}
-    </ul>
+    </main>
   );
 }
