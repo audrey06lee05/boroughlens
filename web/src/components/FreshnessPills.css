@@ -1,0 +1,51 @@
+/*
+ * FreshnessPills.css
+ * Styles for the data freshness boxes: green "Up to date" or amber "Stale".
+ */
+
+.section-sub {
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.pills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.pill {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.8rem;
+}
+
+.pill-hint {
+  color: var(--faint);
+}
+
+.pill-status {
+  display: inline-block;
+  margin-top: 4px;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.pill.ok .pill-status {
+  background: #e6f3ea;
+  color: var(--down);
+}
+
+.pill.stale {
+  background: #fff3dc;
+  border-color: #f1d9a8;
+}
+
+.pill.stale .pill-status {
+  background: #fbe3b4;
+  color: #8f5300;
+}

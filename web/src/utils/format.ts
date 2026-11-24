@@ -20,3 +20,11 @@ export function formatPeriod(period: string): string {
     year: "numeric",
   });
 }
+
+// Data > 90 days old = stale
+export function isStale(dataTo: string, today: Date = new Date()): boolean {
+  const [year, month] = dataTo.split("-").map(Number);
+  const endOfMonth = new Date(year, month, 0);
+  const ageInDays = (today.getTime() - endOfMonth.getTime()) / 86_400_000;
+  return ageInDays > 90;
+}
