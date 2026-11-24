@@ -1,15 +1,18 @@
 /**
  * App.tsx
- * Root component. Loads the overview data, keeps track of which
- * boroughs are selected, and renders the picker and one card each.
+ * Root component. Loads the overview and data-source info, keeps track
+ * of which boroughs are selected, and renders the picker, freshness
+ * boxes and one card per borough.
  */
 
 import { useEffect, useState } from "react";
-import { fetchOverview } from "./api/client";
 import type { BoroughOverview } from "./types/overview";
 import OverviewCard from "./components/OverviewCard";
 import SiteHeader from "./components/SiteHeader";
 import BoroughPicker from "./components/BoroughPicker";
+import { fetchOverview, fetchSources } from "./api/client";
+import type { SourceStatus } from "./types/sources";
+import FreshnessPills from "./components/FreshnessPills";
 
 const COLOURS = ["var(--b0)", "var(--b1)", "var(--b2)"];
 
@@ -24,10 +27,14 @@ export default function App() {
   const shown = selected.flatMap(
     (code) => data.find((b) => b.code === code) ?? [],
   );
+  const [sources, setSources] = useState<SourceStatus[]>([]);
 
   useEffect(() => {
-    fetchOverview()
-      .then(setData)
+    Promise.all([fetchOverview(), fetchSources()])
+      .then(([overview, sourceList]) => {
+        setData(overview);
+        setSources(sourceList);
+      })
       .catch((e) => setError(String(e)))
       .finally(() => setIsLoading(false));
   }, []);
@@ -47,6 +54,7 @@ export default function App() {
               colours={COLOURS}
               onChange={setSelected}
             />
+            <FreshnessPills sources={sources} />
             <h2>At a glance</h2>
             <div className="card-grid">
               {shown.map((b, i) => (
