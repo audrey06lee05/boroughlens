@@ -44,5 +44,74 @@
       "period": "2026-08",
       "publishedAt": "2026-10-15"
     }
+  },
+  {
+    "code": "E09000023",
+    "name": "Lewisham",
+    "population": 300600,
+    "crimePer1000": {
+      "value": 86,
+      "annualChange": null,
+      "period": "2026-09",
+      "publishedAt": "2026-11-03"
+    },
+    "averageRent": {
+      "value": 1850,
+      "annualChange": 0.082,
+      "period": "2026-09",
+      "publishedAt": "2026-10-22"
+    },
+    "averagePrice": {
+      "value": 455000,
+      "annualChange": 0.021,
+      "period": "2026-08",
+      "publishedAt": "2026-10-15"
+    }
+  },
+  {
+    "code": "E09000019",
+    "name": "Islington",
+    "population": 216600,
+    "crimePer1000": {
+      "value": 128,
+      "annualChange": null,
+      "period": "2026-09",
+      "publishedAt": "2026-11-03"
+    },
+    "averageRent": {
+      "value": 2650,
+      "annualChange": 0.059,
+      "period": "2026-09",
+      "publishedAt": "2026-10-22"
+    },
+    "averagePrice": {
+      "value": 690000,
+      "annualChange": 0.004,
+      "period": "2026-08",
+      "publishedAt": "2026-10-15"
+    }
+  },
+  {
+    "code": "E09000033",
+    "name": "Westminster",
+    "population": 204300,
+    "crimePer1000": {
+      "value": 285,
+      "annualChange": null,
+      "period": "2026-09",
+      "publishedAt": "2026-11-03"
+    },
+    "averageRent": {
+      "value": 3650,
+      "annualChange": 0.043,
+      "period": "2026-09",
+      "publishedAt": "2026-10-22"
+    },
+    "averagePrice": {
+      "value": 1020000,
+      "annualChange": -0.025,
+      "period": "2026-08",
+      "publishedAt": "2026-10-15"
+    }
   }
 ]
